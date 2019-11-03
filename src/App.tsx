@@ -2,12 +2,6 @@ import React, { useState }  from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-/*
-function getCount() {
-const [count, setCount] = useState(0);
-}
-*/
-
 const App: React.FC = () => {
 
   const [ count, setCount ] = useState(0);
