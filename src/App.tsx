@@ -1,10 +1,13 @@
 import React, { useState }  from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useStateValue } from './StateProvider';
 
 const App: React.FC = () => {
 
   const [ count, setCount ] = useState(0);
+
+  const [ { counter }, dispatch ] = useStateValue() as any;
 
   return (
     <div className="App">
@@ -25,6 +28,8 @@ const App: React.FC = () => {
         <button onClick={ runSQL }>Read SQL</button>
 
         <button onClick={ ()=>{setCount(count+1)} }> { 'Count: '+count } </button>
+
+        <button onClick={ ()=> dispatch({type:'increment'}) }> { 'Global Count: '+counter } </button>
       </header>
     </div>
   );
